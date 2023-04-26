@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/26 13:59:37 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:27:38 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ split format check and format print into two different functions
 /*
 	https://github.com/Surfi89/ft_printf
 	https://github.com/Anasjaidi/ft_printf
+	https://github.com/42Starfleet/ft_printf
 
 	handle -> puthex/hexlen
 			putptr
