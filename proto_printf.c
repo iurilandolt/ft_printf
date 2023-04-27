@@ -6,61 +6,54 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/26 14:27:38 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:33:33 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	proto_printf(char	*format, ...)
+static int	check_arg(va_list args, const char	c)
 {
-	char *char_value;
-	int int_value;
-	va_list	args;
-	va_start(args, format);
+
+	int	fsize;
+
+	fsize = 0;
+	if (c == '%')
+	{
+		if (c == 'd' || c == 'i')
+			fsize += ft_printnbr(va_arg(args, int));
+		else if (c == 'c')
+			fsize += ft_printchar(va_arg(args, int));
+		else if (c == 's')
+			fsize += ft_printstr(va_arg(args, char *));
+		else if (c == 'u')
+			fsize += ft_printnbru(va_arg(args, unsigned int));
+		else if (c == 'x' || c == 'X')
+			fsize += ft_printhex(va_arg(args, unsigned int), c);
+		else if (c == 'p')
+			fsize += ft_printptr(va_arg(args, unsigned long));
+		else if (c == '%')
+			fsize += ft_printchar('%');
+	}
+	return(fsize);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	int	fsize;
+	va_list args;
 
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 'd' || *format == 'i')
-			{
-				int_value = va_arg(args, int);
-				ft_putnbr_fd(int_value, 1);
-			}
-			else if (*format == 'c')
-			{
-				char_value = va_arg(args, char);
-				ft_putchar_fd(*format, 1);
-			}
-			else if (*format == 's')
-			{
-				char_value = va_arg(args, char *);
-				ft_putstr_fd(*format, 1);
-			}
-			else if (*format == 'u')
-			{
-
-			}
-			else if (*format == 'x' || *format == 'X')
-			{
-
-			}
-			else if (*format == 'p')
-			{
-
-			}
-			else if (*format == '%')
-			{
-
-			}
+			check_arg(args, *format);
 		}
 		else
-			ft_putchar_fd(*format, 1);
+			fsize += ft_printchar(*format);
 		format++;
 	}
-	va_end(args);
 }
 /*
 split format check and format print into two different functions
@@ -70,9 +63,4 @@ split format check and format print into two different functions
 	https://github.com/Surfi89/ft_printf
 	https://github.com/Anasjaidi/ft_printf
 	https://github.com/42Starfleet/ft_printf
-
-	handle -> puthex/hexlen
-			putptr
-			putunsigned
-			print unsigned
 */
