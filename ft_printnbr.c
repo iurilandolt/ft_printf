@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 11:21:37 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:00:59 by rlandolt         ###   ########.fr       */
+/*   Created: 2023/04/27 14:39:46 by rlandolt          #+#    #+#             */
+/*   Updated: 2023/04/27 14:49:49 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "ft_printf.h"
 
-# define FT_PRINTF_H
+int	ft_printnbr(int n)
+{
+	int size;
 
-# include "libft.h"
-
-int	ft_printchar(int c);
-int	ft_printstr(char *str);
-int	ft_printnbr(int n);
-int	ft_print_u_nbr(unsigned int n);
-int ft_printhex(unsigned int i, const char c);
-int	ft_printptr(unsigned long i);
-int	ft_printf(const char *format, ...);
-
-#endif
+	size = 0;
+	if (n == INT_MIN)
+	{
+		ft_printstr("-2147483648");
+		return (11);
+	}
+	else if (n < 0)
+	{
+		size += ft_printchar('-');
+		ft_printnbr(-n);
+	}
+	else if (n >= 10)
+	{
+		size += ft_printnbr(n / 10);
+		size += ft_printnbr(n % 10);
+	}
+	else
+		size += ft_printchar(n + '0');
+	return (size);
+}

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_print_u_nbr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 11:21:37 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:00:59 by rlandolt         ###   ########.fr       */
+/*   Created: 2023/04/27 15:52:34 by rlandolt          #+#    #+#             */
+/*   Updated: 2023/04/27 15:55:16 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
+#include "ft_printf.h"
 
-# define FT_PRINTF_H
+int	ft_print_u_nbr(unsigned int n)
+{
+	int size;
 
-# include "libft.h"
-
-int	ft_printchar(int c);
-int	ft_printstr(char *str);
-int	ft_printnbr(int n);
-int	ft_print_u_nbr(unsigned int n);
-int ft_printhex(unsigned int i, const char c);
-int	ft_printptr(unsigned long i);
-int	ft_printf(const char *format, ...);
-
-#endif
+	size = 0;
+	if (n >= 10)
+	{
+		size += ft_print_u_nbr(n / 10);
+		size += ft_print_u_nbr(n % 10);
+	}
+	else
+		size += ft_printchar(n + '0');
+	return (size);
+}

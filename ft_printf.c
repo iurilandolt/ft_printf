@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   proto_printf.c                                     :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 14:36:45 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:58:07 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_printf.h"
 
 static int	check_arg(va_list args, const char	c)
 {
@@ -27,7 +28,7 @@ static int	check_arg(va_list args, const char	c)
 		else if (c == 's')
 			fsize += ft_printstr(va_arg(args, char *));
 		else if (c == 'u')
-			fsize += ft_printnbru(va_arg(args, unsigned int));
+			fsize += ft_print_u_nbr(va_arg(args, unsigned int));
 		else if (c == 'x' || c == 'X')
 			fsize += ft_printhex(va_arg(args, unsigned int), c);
 		else if (c == 'p')
@@ -59,10 +60,6 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return(fsize);
 }
-/*
-split format check and format print into two different functions
-*/
-
 /*
 	https://github.com/Surfi89/ft_printf
 	https://github.com/Anasjaidi/ft_printf
