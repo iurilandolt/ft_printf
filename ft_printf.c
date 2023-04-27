@@ -6,11 +6,10 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 15:58:07 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:05:41 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_printf.h"
 
 static int	check_arg(va_list args, const char	c)
