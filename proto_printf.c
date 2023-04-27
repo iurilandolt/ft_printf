@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 14:33:33 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 14:36:45 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,21 @@ int	ft_printf(const char *format, ...)
 	int	fsize;
 	va_list args;
 
+	fsize = 0;
+	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			check_arg(args, *format);
+			fsize += check_arg(args, *format);
 		}
 		else
 			fsize += ft_printchar(*format);
 		format++;
 	}
+	va_end(args);
+	return(fsize);
 }
 /*
 split format check and format print into two different functions
