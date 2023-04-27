@@ -6,15 +6,14 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:05:41 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:19:59 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	check_arg(va_list args, const char	c)
+static int	check_arg(va_list args, const char c)
 {
-
 	int	fsize;
 
 	fsize = 0;
@@ -35,13 +34,13 @@ static int	check_arg(va_list args, const char	c)
 		else if (c == '%')
 			fsize += ft_printchar('%');
 	}
-	return(fsize);
+	return (fsize);
 }
 
 int	ft_printf(const char *format, ...)
 {
-	int	fsize;
-	va_list args;
+	int		fsize;
+	va_list	args;
 
 	fsize = 0;
 	va_start(args, format);
@@ -57,7 +56,7 @@ int	ft_printf(const char *format, ...)
 		format++;
 	}
 	va_end(args);
-	return(fsize);
+	return (fsize);
 }
 /*
 	https://github.com/Surfi89/ft_printf

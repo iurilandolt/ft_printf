@@ -6,7 +6,7 @@
 #    By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/27 11:15:52 by rlandolt          #+#    #+#              #
-#    Updated: 2023/04/27 15:59:54 by rlandolt         ###   ########.fr        #
+#    Updated: 2023/04/27 16:17:14 by rlandolt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,6 @@ SRC = ft_printf.c \
 	ft_print_u_nbr.c \
 	ft_printhex.c \
 	ft_printptr.c \
-
-
-
-
 
 CC = cc
 CFLAGS = -Wall -Werror -Wextra

@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:39:37 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:13:13 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:24:04 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_ptrlen(unsigned long i)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (i > 0)
@@ -27,7 +27,7 @@ static int	ft_ptrlen(unsigned long i)
 
 static int	ft_putptr(unsigned long i)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (i >= 16)

@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:39:46 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 14:49:49 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:23:00 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_printnbr(int n)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (n == INT_MIN)

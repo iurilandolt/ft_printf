@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:54:37 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:08:47 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:24:25 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_printstr(char *str)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	while(*str)
+	while (*str)
 	{
 		ft_printchar(*(str + i));
 		i++;

@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:12:02 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:12:26 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:21:49 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_hexlen(unsigned int i)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (i > 0)
@@ -27,7 +27,7 @@ static int	ft_hexlen(unsigned int i)
 
 static int	ft_puthex(unsigned int i, const char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (i >= 16)
@@ -50,10 +50,10 @@ static int	ft_puthex(unsigned int i, const char c)
 	return (count);
 }
 
-int ft_printhex(unsigned int i, const char c)
+int	ft_printhex(unsigned int i, const char c)
 {
 	if (i == 0)
-		return(ft_printchar('0'));
+		return (ft_printchar('0'));
 	else
 		ft_puthex(i, c);
 	return (ft_hexlen(i));

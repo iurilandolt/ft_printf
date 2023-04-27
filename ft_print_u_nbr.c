@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:52:34 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 15:55:16 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:20:33 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_print_u_nbr(unsigned int n)
 {
-	int size;
+	int	size;
 
 	size = 0;
 	if (n >= 10)
