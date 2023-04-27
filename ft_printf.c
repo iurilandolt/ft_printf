@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:19:59 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:23:49 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,20 @@ static int	check_arg(va_list args, const char c)
 	int	fsize;
 
 	fsize = 0;
-	if (c == '%')
-	{
-		if (c == 'd' || c == 'i')
-			fsize += ft_printnbr(va_arg(args, int));
-		else if (c == 'c')
-			fsize += ft_printchar(va_arg(args, int));
-		else if (c == 's')
-			fsize += ft_printstr(va_arg(args, char *));
-		else if (c == 'u')
-			fsize += ft_print_u_nbr(va_arg(args, unsigned int));
-		else if (c == 'x' || c == 'X')
-			fsize += ft_printhex(va_arg(args, unsigned int), c);
-		else if (c == 'p')
-			fsize += ft_printptr(va_arg(args, unsigned long));
-		else if (c == '%')
-			fsize += ft_printchar('%');
-	}
+	if (c == 'd' || c == 'i')
+		fsize += ft_printnbr(va_arg(args, int));
+	else if (c == 'c')
+		fsize += ft_printchar(va_arg(args, int));
+	else if (c == 's')
+		fsize += ft_printstr(va_arg(args, char *));
+	else if (c == 'u')
+		fsize += ft_print_u_nbr(va_arg(args, unsigned int));
+	else if (c == 'x' || c == 'X')
+		fsize += ft_printhex(va_arg(args, unsigned int), c);
+	else if (c == 'p')
+		fsize += ft_printptr(va_arg(args, unsigned long long));
+	else if (c == '%')
+		fsize += ft_printchar('%');
 	return (fsize);
 }
 

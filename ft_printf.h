@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 11:21:37 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:21:04 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:07:55 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_printstr(char *str);
 int	ft_printnbr(int n);
 int	ft_print_u_nbr(unsigned int n);
 int	ft_printhex(unsigned int i, const char c);
-int	ft_printptr(unsigned long i);
+int	ft_printptr(unsigned long long i);
 int	ft_printf(const char *format, ...);
 
 #endif

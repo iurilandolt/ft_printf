@@ -6,11 +6,11 @@
 #    By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/27 11:15:52 by rlandolt          #+#    #+#              #
-#    Updated: 2023/04/27 16:17:14 by rlandolt         ###   ########.fr        #
+#    Updated: 2023/04/27 16:49:49 by rlandolt         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ft_printf.a
+NAME = libftprintf.a
 
 SRC = ft_printf.c \
 	ft_printchar.c \

@@ -6,13 +6,13 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:39:37 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 16:24:04 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:31:31 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_ptrlen(unsigned long i)
+static int	ft_ptrlen(unsigned long long i)
 {
 	int	count;
 
@@ -25,15 +25,15 @@ static int	ft_ptrlen(unsigned long i)
 	return (count);
 }
 
-static int	ft_putptr(unsigned long i)
+static int	ft_putptr(unsigned long long i)
 {
 	int	count;
 
 	count = 0;
 	if (i >= 16)
 	{
-		ft_putptr(i / 16);
-		ft_putptr(i % 16);
+		count += ft_putptr(i / 16);
+		count += ft_putptr(i % 16);
 	}
 	else
 	{
@@ -45,11 +45,14 @@ static int	ft_putptr(unsigned long i)
 	return (count);
 }
 
-int	ft_printptr(unsigned long i)
+int	ft_printptr(unsigned long long i)
 {
 	if (i == 0)
 		return (ft_printstr("(nil)"));
 	else
+	{
+		ft_printstr("0x");
 		ft_putptr(i);
-	return (ft_ptrlen(i));
+	}
+	return (ft_ptrlen(i) + 2);
 }
