@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 15:39:37 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 17:31:31 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/30 13:22:25 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,20 @@ static int	ft_ptrlen(unsigned long long i)
 	return (count);
 }
 
-static int	ft_putptr(unsigned long long i)
+static void	ft_putptr(unsigned long long i)
 {
-	int	count;
-
-	count = 0;
 	if (i >= 16)
 	{
-		count += ft_putptr(i / 16);
-		count += ft_putptr(i % 16);
+		ft_putptr(i / 16);
+		ft_putptr(i % 16);
 	}
 	else
 	{
 		if (i <= 9)
-			count += ft_printchar(i + '0');
+			ft_printchar(i + '0');
 		else
-			count += ft_printchar((i - 10 + 'a'));
+			ft_printchar((i - 10 + 'a'));
 	}
-	return (count);
 }
 
 int	ft_printptr(unsigned long long i)

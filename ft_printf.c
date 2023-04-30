@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/27 17:23:49 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/04/30 13:23:08 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,22 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (fsize);
 }
+
+#include <stdio.h>
+
+int	main(void)
+{
+	int	ret1 = 0;
+	int ret2 = 0;
+	unsigned int	hex = 420;
+
+	ret1 = printf("og %d, %p, %x\n", ret1, &ret1, hex);
+	printf("og %d\n", ret1);
+
+	ret2 = ft_printf("ft %d, %p, %x\n", ret2, &ret2, hex);
+	ft_printf("ft %d\n", ret2);
+
+}
 /*
-	https://github.com/Surfi89/ft_printf
-	https://github.com/Anasjaidi/ft_printf
-	https://github.com/42Starfleet/ft_printf
+cc ft_printf.c ft_printhex.c ft_printptr.c ft_print_u_nbr.c ft_printchar.c ft_printnbr.c ft_printstr.c ft_printf.h && ./a.out
 */
