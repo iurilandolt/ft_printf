@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:39:46 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/04/30 13:35:44 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/05/01 10:50:35 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_printnbr(int n)
 
 	size = 0;
 	if (n == INT_MIN)
-		return(ft_printstr("-2147483648"));
+		return (ft_printstr("-2147483648"));
 	else if (n < 0)
 	{
 		size += ft_printchar('-');
