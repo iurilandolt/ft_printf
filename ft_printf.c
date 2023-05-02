@@ -6,7 +6,7 @@
 /*   By: rlandolt <rlandolt@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 23:24:35 by rlandolt          #+#    #+#             */
-/*   Updated: 2023/05/01 10:49:49 by rlandolt         ###   ########.fr       */
+/*   Updated: 2023/05/02 13:08:31 by rlandolt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,4 @@ int	main(void)
 
 	ret2 = ft_printf("%s", str);
 	ft_printf("ft %d\n", ret2);
-}
-*/
+}*/
